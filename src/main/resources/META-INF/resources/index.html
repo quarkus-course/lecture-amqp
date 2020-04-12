@@ -1,0 +1,7 @@
+Value is <span id="content">Unknown</span>
+<script>
+    var source = new EventSource("/prices/stream");
+    source.onmessage = function (event) {
+        document.getElementById("content").innerHTML = event.data;
+    };
+</script>
